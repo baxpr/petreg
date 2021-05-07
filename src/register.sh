@@ -18,7 +18,8 @@
 #    mrpet.nii.gz
 
 
-# Copy files to outdir / working dir
+# Copy files to outdir / working dir. Use convenient filenames so
+# we can just hardcode the filenames below.
 cp ${pet_niigz} ${out_dir}/pet.nii.gz
 cp ${ct_niigz} ${out_dir}/ct.nii.gz
 cp ${mr_niigz} ${out_dir}/mr.nii.gz
