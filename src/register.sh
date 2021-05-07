@@ -40,6 +40,7 @@ echo "Register CT to MR"
 flirt -usesqform -dof 6 -cost normmi -in ct -ref mr -out mct -omat ct_to_mr.mat
 
 # Combine PET-CT and CT-MR transforms
+echo "Combine transforms"
 convert_xfm -omat rpet_to_mr.mat -concat ct_to_mr.mat rpet_to_ct.mat
 
 # Apply registration to PET means and PET series (to MR space)
