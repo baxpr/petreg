@@ -21,12 +21,12 @@ And `<inputs>` are
     --seg_niigz       Segmentation of MR, e.g. multi-atlas / slant
     --labels_csv      Labels corresponding to seg_niigz
     
-    --project         Information from XNAT, if used
-	--subject
+    --project         Information from XNAT, if used (optional). These
+	--subject           are only used to annotate the PDF QA report.
 	--session
 	--scan
     
-    --out_dir         Where outputs will be stored
+    --out_dir         Where outputs will be stored (default /OUTPUTS)
 
 The `labels_csv` file must have a specific format like so:
 
