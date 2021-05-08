@@ -28,6 +28,20 @@ And `<inputs>` are
     
     --out_dir         Where outputs will be stored
 
+The `labels_csv` file must have a specific format like so:
+
+    1,
+    2,
+    3,
+    4,3rd Ventricle
+    5,
+    6,
+
+All numbers from 1 to the maximum label value must be included, as shown, as that is how 
+`fslmeants` extracts regional values. Regions with a value but no text label will be 
+dropped from the final output. If nothing is supplied for this input, a default `label_csv` 
+will be used that matches MultiAtlas/SLANT.
+
 ## Outputs
 
     PDF               QA report
