@@ -13,6 +13,7 @@ The command line is
 
     petreg.sh <inputs>
 
+
 	--pet_niigz       PET time series
     --ct_niigz        CT
     --mr_niigz        MR (typically T1W)
