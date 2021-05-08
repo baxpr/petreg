@@ -30,9 +30,13 @@ From: ubuntu:20.04
   sed -i 's/rights="none" pattern="@\*"/rights="read" pattern="@*"/' \
     /etc/ImageMagick-6/policy.xml
 
-  # FSL. We need 6.0.4 for the b02b01_1.sch topup schedule. See
-  # https://fsl.fmrib.ox.ac.uk/fsldownloads/manifest.csv
-  # And, the centos7 version suits for Ubuntu 14-20.
+  # Install python3 with pip and use by default
+  # https://stackoverflow.com/a/61878185
+  apt install -y python3 python3-pip python-is-python3
+  pip3 install pandas
+
+  # FSL. See https://fsl.fmrib.ox.ac.uk/fsldownloads/manifest.csv
+  # The centos7 version suits for Ubuntu 14-20.
   fslver=6.0.4
   cd /usr/local
   wget -nv https://fsl.fmrib.ox.ac.uk/fsldownloads/fsl-${fslver}-centos7_64.tar.gz
