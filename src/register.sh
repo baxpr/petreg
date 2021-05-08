@@ -50,5 +50,4 @@ flirt -in rpet -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet
 
 # Extract PET values from seg (multiatlas) regions
 echo "Extract regional values"
-fslstats -t -K seg mrpet -c -v -m
-
+fslmeants -i mrpet --label=seg -o mrpet_seg_extracted.txt
