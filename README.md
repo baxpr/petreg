@@ -1,11 +1,11 @@
 # PET to MR registration via CT
 
-Preprocessing and extraction of data from regions in a PET image.
+Preprocessing and extraction of data from regions in a PET image, using FSL.
 
-1. Motion correction applied to PET time series
-2. Mean PET registered to CT
-3. CT registered to MR
-4. Regional values extracted from PET for the supplied MR segmentation
+1. Motion correction applied to PET time series (`mcflirt`)
+2. Mean PET registered to CT (`flirt` 6 dof)
+3. CT registered to MR (`flirt` 6 dof)
+4. PET regional values extracted using the supplied MR segmentation (`fslmeants`)
 
 ## Inputs
 
