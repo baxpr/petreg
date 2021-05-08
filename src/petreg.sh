@@ -39,6 +39,10 @@ while [[ $# -gt 0 ]]; do
 	esac
 done
 
+# FSL setup. Relies on FSLDIR being set already
+. ${FSLDIR}/etc/fslconf/fsl.sh
+export PATH=${FSLDIR}/bin:${PATH}
+
 # Run the pipeline
 register.sh
 make_pdf.sh
