@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+#
+# Reformat fslmeants output into a more useful format
 
 import argparse
 import sys

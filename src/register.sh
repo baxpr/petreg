@@ -21,11 +21,11 @@
 # Copy files to outdir / working dir. Use convenient filenames so
 # we can just hardcode the filenames below.
 echo "Copying inputs"
-cp ${pet_niigz} ${out_dir}/pet.nii.gz
-cp ${ct_niigz} ${out_dir}/ct.nii.gz
-cp ${mr_niigz} ${out_dir}/mr.nii.gz
-cp ${seg_niigz} ${out_dir}/seg.nii.gz
-cd ${out_dir}
+cp "${pet_niigz}" "${out_dir}"/pet.nii.gz
+cp "${ct_niigz}" "${out_dir}"/ct.nii.gz
+cp "${mr_niigz}" "${out_dir}"/mr.nii.gz
+cp "${seg_niigz}" "${out_dir}"/seg.nii.gz
+cd "${out_dir}"
 
 # Initial PET motion correction
 echo "Within-series PET registration"
@@ -51,3 +51,7 @@ flirt -in rpet -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet
 # Extract PET values from seg (multiatlas) regions
 echo "Extract regional values"
 fslmeants -i mrpet --label=seg -o mrpet_seg_extracted.txt
+reformat_extracted.py \
+    --out_csv region_values.csv \
+    --labels_csv "${labels_csv}" \
+    --vals_txt "${out_dir}"/mrpet_seg_extracted.txt
