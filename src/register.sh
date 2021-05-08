@@ -50,8 +50,14 @@ flirt -in rpet -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet
 
 # Extract PET values from seg (multiatlas) regions
 echo "Extract regional values"
-fslmeants -i mrpet --label=seg -o mrpet_seg_extracted.txt
+fslmeants -i mrpet --label=seg -o mrpet_extracted.txt
 reformat_extracted.py \
-    --out_csv region_values.csv \
+    --out_csv mrpet_extracted.csv \
     --labels_csv "${labels_csv}" \
-    --vals_txt "${out_dir}"/mrpet_seg_extracted.txt
+    --vals_txt "${out_dir}"/mrpet_extracted.txt
+
+fslmeants -i mrpet_mean_reg --label=seg -o mrpet_mean_reg_extracted.txt
+reformat_extracted.py \
+    --out_csv mrpet_mean_reg_extracted.csv \
+    --labels_csv "${labels_csv}" \
+    --vals_txt "${out_dir}"/mrpet_mean_reg_extracted.txt

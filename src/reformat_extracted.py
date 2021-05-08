@@ -8,13 +8,13 @@ import pandas
 
 p = argparse.ArgumentParser()
 p.add_argument('--out_csv', help='Output csv', required=True)
-p.add_argument('--labels_txt', help='Region labels', required=True)
+p.add_argument('--labels_csv', help='Region labels csv', required=True)
 p.add_argument('--vals_txt', help='Regional values from fslmeants', required=True)
 a = p.parse_args()
 
 # ROI labels from csv file. No header, numbering must match
 # the ROI image and fslmeants count. Labels must be unique
-rois = pandas.read_csv(a.labels_txt,header=None,names=['Label','Region'])
+rois = pandas.read_csv(a.labels_csv,header=None,names=['Label','Region'])
 
 # Read space-delimited fslmeants text file
 data = pandas.read_csv(a.vals_txt,header=None,delimiter='\s+')
