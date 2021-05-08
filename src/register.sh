@@ -1,22 +1,4 @@
 #!/usr/bin/env bash
-#
-# Outputs:
-#
-#    mr.nii.gz                Original MR
-#    seg.nii.gz               Original MR segmentation (multiatlas)
-#    ct.nii.gz                Original CT
-#    pet.nii.gz              Original PET series
-# 
-#    ct_to_mr.mat            Transform from CT to MR
-#    rpet_to_ct.mat         Transform from motion-corrected PET to CT
-#    rpet_to_mr.mat         Transform from motion-corrected PET to MR
-# 
-#    rpet_mean_reg.nii.gz    Mean PET after motion correction
-#    rpet.nii.gz             PET series after motion correction
-#
-#    mrpet_mean_reg.nii.gz   Same as above, but registered to MR
-#    mrpet.nii.gz
-
 
 # Copy files to outdir / working dir. Use convenient filenames so
 # we can just hardcode the filenames below.
