@@ -36,6 +36,8 @@ The `labels_csv` file must have a specific format like so:
     4,3rd Ventricle
     5,
     6,
+    ...
+    207,Left TTG transverse temporal gyrus
 
 All numbers from 1 to the maximum label value must be included, as shown, as that is how 
 `fslmeants` extracts regional values. Regions with a value but no text label will be 
