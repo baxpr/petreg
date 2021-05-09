@@ -42,6 +42,7 @@ convert -size 2600x3365 xc:white \
 	-gravity center -pointsize 48 -annotate +0-50 \
 	"MR ROIs on CT" \
 	-gravity SouthEast -pointsize 48 -annotate +100+100 "${thedate}" \
+	-gravity NorthWest -pointsize 48 -annotate +100+200 "${info_string}" \
 	page1.png
 
 convert page1.png petreg.pdf
