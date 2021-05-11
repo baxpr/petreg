@@ -30,3 +30,10 @@ echo "Apply registration"
 flirt -in rpet_mean_reg -ref seg -init rpet_to_mr.mat -applyxfm -out mrpet_mean_reg
 flirt -in rpet -ref seg -init rpet_to_mr.mat -applyxfm -out mrpet
 
+# Extract ROI values
+roi_extract.py \
+	--labels_niigz seg.nii.gz \
+	--labels_csv ${labels_csv} \
+	--data_niigz mrpet.nii.gz \
+
+
