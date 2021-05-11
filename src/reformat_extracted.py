@@ -3,7 +3,6 @@
 # Reformat fslmeants output into a more useful format
 
 import argparse
-import sys
 import pandas
 
 p = argparse.ArgumentParser()
