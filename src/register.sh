@@ -25,7 +25,8 @@ flirt -usesqform -dof 6 -cost normmi -in ct -ref mr -out mct -omat ct_to_mr.mat
 echo "Combine transforms"
 convert_xfm -omat rpet_to_mr.mat -concat ct_to_mr.mat rpet_to_ct.mat
 
-# Fix seg header to exactly match mr - compensate for tiny error in SLANT
+# Fix seg header to exactly match mr - compensate for tiny error in SLANT that
+# causes issues with nilearn.regions
 fslcpgeom mr seg
 
 # Apply registration to PET means and PET series (to MR space)
