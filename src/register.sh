@@ -37,6 +37,6 @@ flirt -in rpet -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet
 # Extract ROI values
 roi_extract.py \
 	--labels_niigz seg.nii.gz \
-	--labels_csv ${labels_csv} \
+	--labels_csv "${labels_csv}" \
 	--data_niigz mrpet.nii.gz
 
