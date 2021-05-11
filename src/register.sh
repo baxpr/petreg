@@ -19,16 +19,19 @@ flirt -usesqform -dof 6 -in rpet_mean_reg -ref ct -omat rpet_to_ct.mat
 
 # Register CT to MR (usesqform is crucial)
 echo "Register CT to MR"
-flirt -usesqform -dof 6 -cost normmi -in ct -ref seg -out mct -omat ct_to_mr.mat
+flirt -usesqform -dof 6 -cost normmi -in ct -ref mr -out mct -omat ct_to_mr.mat
 
 # Combine PET-CT and CT-MR transforms
 echo "Combine transforms"
 convert_xfm -omat rpet_to_mr.mat -concat ct_to_mr.mat rpet_to_ct.mat
 
+# Fix seg header to exactly match mr - compensate for tiny error in SLANT
+fslcpgeom mr seg
+
 # Apply registration to PET means and PET series (to MR space)
 echo "Apply registration"
-flirt -in rpet_mean_reg -ref seg -init rpet_to_mr.mat -applyxfm -out mrpet_mean_reg
-flirt -in rpet -ref seg -init rpet_to_mr.mat -applyxfm -out mrpet
+flirt -in rpet_mean_reg -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet_mean_reg
+flirt -in rpet -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet
 
 # Extract ROI values
 roi_extract.py \

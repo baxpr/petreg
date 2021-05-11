@@ -5,11 +5,11 @@ cd "${out_dir}"
 mkdir PDF
 cp petreg.pdf PDF
 
-mkdir PET_CSV
-cp mrpet_extracted.csv PET_CSV
+mkdir PET_ROI_MEANS
+cp means.csv PET_ROI_MEANS
 
-mkdir MEANPET_CSV
-cp mrpet_mean_reg_extracted.csv MEANPET_CSV
+mkdir PET_ROI_SDEVS
+cp sdevs.csv PET_ROI_SDEVS
 
 mkdir PET_REG
 cp mrpet.nii.gz PET_REG
