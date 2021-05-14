@@ -28,5 +28,5 @@ textlabels = dlabels.merge(label_list,how='left',on='Label')
 means = pandas.DataFrame(means,columns=textlabels.Region)
 sdevs = pandas.DataFrame(sdevs,columns=textlabels.Region)
 
-means.to_csv(os.path.join(out_dir,'means.csv'),index=False)
-sdevs.to_csv(os.path.join(out_dir,'sdevs.csv'),index=False)
+means.to_csv(os.path.join(a.out_dir,'means.csv'),index=False)
+sdevs.to_csv(os.path.join(a.out_dir,'sdevs.csv'),index=False)
