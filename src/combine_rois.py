@@ -7,6 +7,19 @@ import pandas
 
 # New ROIs from multiatlas labels
 rois = {
+    'Hippocampus': [47,48],
+    'Parahippocampus': [170,171],
+    'Putamen': [57, 58],
+    'InferiorParietal': [194,195,106,107]
+    'Precuneus': [168,169]
+    'AnteriorCingulate': [100,101]
+    'Cingulate': [138,139]
+    'PosteriorCingulate': [166,167]
+    'Fusiform': [122,123]
+    'Thalamus': [59,60]
+    'Entorhinal': [116,117]
+    'Insula': [102,103,172,173]
+    'FrontalLobe': [152,153,190,191,142,143,162,163,164,165,204,205,150,151,182,183,190,191,140,141,136,137,146,147,104,105, 178, 179, 186, 187, 192, 193]
     'Cerebellum': (1, [38,39,40,41,71,72,73] ),
     'Ventricle':  (2, [4,11,49,50,51,52]     ),
 }
