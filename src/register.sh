@@ -23,3 +23,6 @@ echo "Apply registration"
 flirt -in rpet_mean_reg -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet_mean_reg
 flirt -in rpet -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet
 
+# Compute sum image
+numvols=$(fslval mrpet dim4)
+fslmaths mrpet -Tmean -mul ${numvols} mrpet_sum

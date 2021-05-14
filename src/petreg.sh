@@ -57,9 +57,13 @@ combine_rois.py --seg_niigz "${out_dir}"/seg.nii.gz --groups_csv "${labels_csv}"
 # Registration of PET, CT, MR
 register.sh
 
-# Regional values
+# Regional values for time series and for sum
 roi_extract.py --labels_niigz "${out_dir}"/nseg.nii.gz --labels_csv "${out_dir}"/nseg.csv \
-	--data_niigz "${out_dir}"/mrpet.nii.gz --out_dir "${out_dir}"
+	--data_niigz "${out_dir}"/mrpet.nii.gz --out_pfx "${out_dir}/mrpet_"
+roi_extract.py --labels_niigz "${out_dir}"/nseg.nii.gz --labels_csv "${out_dir}"/nseg.csv \
+	--data_niigz "${out_dir}"/mrpet_sum.nii.gz --out_dir "${out_dir}/mrpet_sum_"
+
+# FIXME SUVR normalization
 
 # Report
 make_pdf.sh

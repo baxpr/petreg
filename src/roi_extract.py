@@ -11,7 +11,7 @@ p = argparse.ArgumentParser()
 p.add_argument('--labels_niigz', help='ROI label image', required=True)
 p.add_argument('--labels_csv', help='ROI label csv', required=True)
 p.add_argument('--data_niigz', help='Time series data to extract', required=True)
-p.add_argument('--out_dir', help='Output directory', required=True)
+p.add_argument('--out_pfx', help='Output directory and prefix', required=True)
 a = p.parse_args()
 
 # nilearn region of interest signal extraction
@@ -28,5 +28,5 @@ textlabels = dlabels.merge(label_list,how='left',on='Label')
 means = pandas.DataFrame(means,columns=textlabels.Region)
 sdevs = pandas.DataFrame(sdevs,columns=textlabels.Region)
 
-means.to_csv(os.path.join(a.out_dir,'means.csv'),index=False)
-sdevs.to_csv(os.path.join(a.out_dir,'sdevs.csv'),index=False)
+means.to_csv(a.out_pfx+'means.csv',index=False)
+sdevs.to_csv(a.out_pfx+'sdevs.csv',index=False)
