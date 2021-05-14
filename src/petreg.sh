@@ -7,7 +7,7 @@ export project=NO_PROJ
 export subject=NO_SUBJ
 export session=NO_SESS
 export scan=NO_SCAN
-export labels_csv=/opt/petreg/src/multiatlas_labels.csv
+export labels_csv=/opt/petreg/src/multiatlas_labels_grouped.csv
 export out_dir=/OUTPUTS
 
 # Parse options
@@ -43,7 +43,26 @@ done
 . ${FSLDIR}/etc/fslconf/fsl.sh
 export PATH=${FSLDIR}/bin:${PATH}
 
-# Run the pipeline
+# Copy inputs
+prep_files.sh
+
+# Fix seg header to exactly match mr - compensate for tiny error in SLANT that
+# causes issues with nilearn.regions
+fslcpgeom "${out_dir}"/mr "${out_dir}"/seg
+
+# Create our desired ROIs from multiatlas labels
+combine_rois.py --seg_niigz "${out_dir}"/seg.nii.gz --groups_csv "${labels_csv}" \
+	--out_pfx "${out_dir}"/nseg
+
+# Registration of PET, CT, MR
 register.sh
+
+# Regional values
+roi_extract.py --labels_niigz "${out_dir}"/nseg.nii.gz --labels_csv "${out_dir}"/nseg.csv \
+	--data_niigz "${out_dir}"/mrpet.nii.gz --out_dir "${out_dir}"
+
+# Report
 make_pdf.sh
+
+# Organize for DAX
 organize_outputs.sh

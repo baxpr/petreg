@@ -26,3 +26,8 @@ cp mct.nii.gz CT_REG
 mkdir CT_REG_MAT
 cp ct_to_mr.mat CT_REG_MAT
 
+mkdir ROIS
+cp nseg.nii.gz ROIS
+
+mkdir ROI_LABELS
+cp nseg.csv ROI_LABELS
