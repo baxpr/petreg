@@ -15,7 +15,6 @@ a = p.parse_args()
 # Read our seg image
 img_seg = nibabel.load(a.seg_niigz)
 data_seg = numpy.around(img_seg.get_fdata())
-affine_seg = img_seg.affine
 
 # Load the groupings, drop ungrouped, and identify unique groups
 groups = pandas.read_csv(a.groups_csv)
@@ -39,6 +38,6 @@ for roi in rois:
 labels_roi = pandas.DataFrame(list(zip(Label, Region)),columns =['Label', 'Region'])
 labels_roi.to_csv(f'{a.out_pfx}.csv',index=False)
 
-roi_img = nibabel.nifti1.Nifti1Image(data_roi,affine_seg)
+roi_img = nibabel.nifti1.Nifti1Image(data_roi,img_seg.affine)
 roi_img.to_filename(f'{a.out_pfx}.nii.gz')
 
