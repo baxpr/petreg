@@ -14,22 +14,22 @@ cp mrpet_means.csv PET_ROI_MEANS
 mkdir PET_ROI_SDEVS
 cp mrpet_sdevs.csv PET_ROI_SDEVS
 
-mkdir SUMPET_REG
+mkdir SUM_REG
 cp mrpet_sum.nii.gz SUMPET_REG
 
-mkdir SUMPET_ROI_MEANS
+mkdir SUM_ROI_MEANS
 cp mrpet_sum_means.csv SUMPET_ROI_MEANS
 
-mkdir SUMPET_ROI_SDEVS
+mkdir SUM_ROI_SDEVS
 cp mrpet_sum_sdevs.csv SUMPET_ROI_SDEVS
 
-mkdir SUMPET_SUVR_REG
+mkdir SUVR_REG
 cp mrpet_suvr.nii.gz SUMPET_SUVR_REG
 
-mkdir SUMPET_SUVR_ROI_MEANS
+mkdir SUVR_ROI_MEANS
 cp mrpet_suvr_means.csv SUMPET_SUVR_ROI_MEANS
 
-mkdir SUMPET_SUVR_ROI_SDEVS
+mkdir SUVR_ROI_SDEVS
 cp mrpet_suvr_sdevs.csv SUMPET_SUVR_ROI_SDEVS
 
 mkdir MEANPET_REG
