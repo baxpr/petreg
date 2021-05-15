@@ -65,7 +65,7 @@ roi_extract.py --labels_niigz "${out_dir}"/nseg.nii.gz --labels_csv "${out_dir}"
 
 # SUVR normalization for sum image
 cerval=$(get_cerebellum.py --roivals_csv "${out_dir}"/mrpet_sum_means.csv)
-fslmaths mrpet_sum -div ${cerval} mrpet_suvr
+fslmaths "${out_dir}"/mrpet_sum -div ${cerval} "${out_dir}"/mrpet_suvr
 
 # Regional values for SUVR
 roi_extract.py --labels_niigz "${out_dir}"/nseg.nii.gz --labels_csv "${out_dir}"/nseg.csv \
