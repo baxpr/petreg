@@ -15,4 +15,4 @@ cerval = rois['Cerebellum']
 if len(cerval) != 1:
     raise Exception(f'Need 1 value, got {len(cerval)}')
 
-print(cerval)
+print(cerval[0])
