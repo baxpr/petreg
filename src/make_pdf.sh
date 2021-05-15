@@ -16,7 +16,7 @@ fsleyes render -of petroi.png \
     --size 1800 600 --xzoom 1000 --yzoom 1000 --zzoom 1000 \
 	--layout horizontal --hideCursor \
 	mrpet_mean_reg --overlayType volume \
-	nseg --overlayType label --outline --outlineWidth 1 --lut random_big
+	nseg --overlayType label --outline --outlineWidth 2 --lut random_big
 
 # Same but CT underlay
 fsleyes render -of ctroi.png \
@@ -24,7 +24,7 @@ fsleyes render -of ctroi.png \
     --size 1800 600 --xzoom 1000 --yzoom 1000 --zzoom 1000 \
 	--layout horizontal --hideCursor \
 	mct --overlayType volume \
-	nseg --overlayType label --outline --outlineWidth 1 --lut random_big
+	nseg --overlayType label --outline --outlineWidth 2 --lut random_big
 
 
 # Combine
