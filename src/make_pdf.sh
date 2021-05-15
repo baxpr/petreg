@@ -2,10 +2,6 @@
 
 echo "Making PDF"
 
-# FSL init
-PATH=${FSLDIR}/bin:${PATH}
-. ${FSLDIR}/etc/fslconf/fsl.sh
-
 # Work in output directory
 cd ${out_dir}
 
