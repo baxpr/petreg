@@ -22,6 +22,7 @@ And `<arguments>` are below. The first four are required:
     --ct_niigz        CT
     --mr_niigz        MR (typically T1W)
     --seg_niigz       Segmentation of MR from multi-atlas / slant
+	
     --labels_csv      Labels corresponding to seg_niigz. Optional argument
 	                    only needed in special circumstances.
     
