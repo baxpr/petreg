@@ -25,4 +25,4 @@ flirt -in rpet -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet
 
 # Compute sum image
 numvols=$(fslval mrpet dim4)
-fslmaths mrpet -Tmean -mul ${numvols} mrpet_sum
+fslmaths mrpet_mean_reg -mul ${numvols} mrpet_sum

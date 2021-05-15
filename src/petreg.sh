@@ -61,9 +61,15 @@ register.sh
 roi_extract.py --labels_niigz "${out_dir}"/nseg.nii.gz --labels_csv "${out_dir}"/nseg.csv \
 	--data_niigz "${out_dir}"/mrpet.nii.gz --out_pfx "${out_dir}/mrpet_"
 roi_extract.py --labels_niigz "${out_dir}"/nseg.nii.gz --labels_csv "${out_dir}"/nseg.csv \
-	--data_niigz "${out_dir}"/mrpet_sum.nii.gz --out_dir "${out_dir}/mrpet_sum_"
+	--data_niigz "${out_dir}"/mrpet_sum.nii.gz --out_pfx "${out_dir}/mrpet_sum_"
 
-# FIXME SUVR normalization
+# SUVR normalization for sum image
+cerval=$(get_cerebellum.py --roivals_csv "${out_dir}"/mrpet_sum_means.csv)
+fslmaths mrpet_sum -div ${cerval} mrpet_suvr
+
+# Regional values for SUVR
+roi_extract.py --labels_niigz "${out_dir}"/nseg.nii.gz --labels_csv "${out_dir}"/nseg.csv \
+	--data_niigz "${out_dir}"/mrpet_suvr.nii.gz --out_pfx "${out_dir}/mrpet_suvr_"
 
 # Report
 make_pdf.sh
