@@ -49,3 +49,6 @@ cp nseg.nii.gz ROIS
 
 mkdir ROI_LABELS
 cp nseg.csv ROI_LABELS
+
+mkdir MOT_PARAMS
+cp rpet.par MOT_PARAMS

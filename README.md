@@ -42,6 +42,7 @@ and geometry of the MR.
     CT_REG                   CT registered to MR
     CT_REG_MAT               Transform from CT to MR (FSL format)
     MEANPET_REG              Mean PET registered to MR
+	MOT_PARAMS               PET time series motion parameters (FSL format)
     PDF                      QA report
     PET_REG                  PET time series registered to MR
     PET_REG_MAT              Transform from PET to MR (FSL format)
