@@ -35,7 +35,7 @@ else:
 # Round the labels we got from the image to nearest int, then match the correct
 # region name to each using pandas merge with the separate label csv
 label_list = pandas.read_csv(a.labels_csv)
-dlabels = pandas.DataFrame([int(x) for x in labels],columns=['Label'])
+dlabels = pandas.DataFrame([int(numpy.around(x)) for x in labels],columns=['Label'])
 textlabels = dlabels.merge(label_list,how='left',on='Label')
 
 # Save to file with the region names as column names
