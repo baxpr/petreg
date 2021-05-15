@@ -4,9 +4,9 @@ Preprocessing and extraction of data from regions in a PET image, using FSL. Reg
 from a MultiAtlas segmentation (https://github.com/VUIIS/Multi-Atlas-v3.0.0, 
 https://github.com/MASILab/SLANTbrainSeg).
 
-1. Motion correction applied to PET time series (`mcflirt` 6 dof)
-2. Mean PET registered to CT (`flirt` 6 dof)
-3. CT registered to MR (`flirt` 6 dof)
+1. Motion correction applied to PET time series (`mcflirt`, 6 dof)
+2. Mean PET registered to CT (`flirt`, 6 dof)
+3. CT registered to MR (`flirt`, default 6 dof)
 4. SUVR calculated from summed PET image, referenced to cerebellum
 4. PET regional values extracted
 
