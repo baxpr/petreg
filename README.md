@@ -66,4 +66,4 @@ and geometry of the MR.
 * MCFLIRT: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/MCFLIRT
 * FLIRT: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT#References
 * MultiAtlas: https://pubmed.ncbi.nlm.nih.gov/23265798/
-* SLANT: https://arxiv.org/abs/1903.12152
+* SLANT: https://pubmed.ncbi.nlm.nih.gov/30910724/
