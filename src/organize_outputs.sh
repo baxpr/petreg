@@ -18,19 +18,19 @@ mkdir SUMPET_REG
 cp mrpet_sum.nii.gz SUMPET_REG
 
 mkdir SUMPET_ROI_MEANS
-cp mrpet_sum_means.nii.gz SUMPET_ROI_MEANS
+cp mrpet_sum_means.csv SUMPET_ROI_MEANS
 
 mkdir SUMPET_ROI_SDEVS
-cp mrpet_sum_sdevs.nii.gz SUMPET_ROI_SDEVS
+cp mrpet_sum_sdevs.csv SUMPET_ROI_SDEVS
 
 mkdir SUMPET_SUVR_REG
 cp mrpet_suvr.nii.gz SUMPET_SUVR_REG
 
 mkdir SUMPET_SUVR_ROI_MEANS
-cp mrpet_suvr_means.nii.gz SUMPET_SUVR_ROI_MEANS
+cp mrpet_suvr_means.csv SUMPET_SUVR_ROI_MEANS
 
 mkdir SUMPET_SUVR_ROI_SDEVS
-cp mrpet_suvr_sdevs.nii.gz SUMPET_SUVR_ROI_SDEVS
+cp mrpet_suvr_sdevs.csv SUMPET_SUVR_ROI_SDEVS
 
 mkdir MEANPET_REG
 cp mrpet_mean_reg.nii.gz MEANPET_REG
