@@ -54,3 +54,11 @@ All output images have been resampled to the voxel size and geometry of the MR.
     SUVR_ROI_MEANS           ROI means of SUVR image
     SUVR_ROI_SDEVS           ROI std devs of SUVR image
 
+
+## References
+
+* FSL: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
+* MCFLIRT: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/MCFLIRT
+* FLIRT: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT#References
+* MultiAtlas: https://pubmed.ncbi.nlm.nih.gov/23265798/
+* SLANT: https://arxiv.org/abs/1903.12152
