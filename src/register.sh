@@ -12,7 +12,7 @@ flirt -usesqform -dof 6 -in rpet_mean_reg -ref ct -omat rpet_to_ct.mat
 
 # Register CT to MR (usesqform is crucial)
 echo "Register CT to MR"
-flirt -usesqform -dof 6 -cost normmi -in ct -ref mr -out mct -omat ct_to_mr.mat
+flirt -usesqform -dof ${ctmr_dof} -cost normmi -in ct -ref mr -out mct -omat ct_to_mr.mat
 
 # Combine PET-CT and CT-MR transforms
 echo "Combine transforms"

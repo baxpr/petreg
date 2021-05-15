@@ -9,6 +9,7 @@ export project=NO_PROJ
 export subject=NO_SUBJ
 export session=NO_SESS
 export scan=NO_SCAN
+export ctmr_dof=6
 export labels_csv=/opt/petreg/src/multiatlas_labels_grouped.csv
 export out_dir=/OUTPUTS
 
@@ -32,6 +33,8 @@ while [[ $# -gt 0 ]]; do
 			export mr_niigz="${2}"; shift; shift ;;
 		--seg_niigz)
 			export seg_niigz="${2}"; shift; shift ;;
+		--ctmr_dof)
+			export ctmr_dof="${2}"; shift; shift ;;
 		--labels_csv)
 			export labels_csv="${2}"; shift; shift ;;
 		--out_dir)

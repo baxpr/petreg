@@ -23,8 +23,7 @@ And `<arguments>` are below. The first four are required:
     --mr_niigz        MR (typically T1W)
     --seg_niigz       Segmentation of MR from multi-atlas / slant
 	
-    --labels_csv      Labels corresponding to seg_niigz. Optional argument
-	                    only needed in special circumstances.
+	--ctmr_dof        DOF for CT/MR registration (default 6)
     
     --project         Information from XNAT, if used (optional). These
 	--subject           are only used to annotate the PDF QA report.
@@ -32,6 +31,9 @@ And `<arguments>` are below. The first four are required:
 	--scan
     
     --out_dir         Where outputs will be stored (default /OUTPUTS)
+	
+    --labels_csv      Labels corresponding to seg_niigz. Optional argument
+	                    only needed in special circumstances.
 
 
 ## Outputs
