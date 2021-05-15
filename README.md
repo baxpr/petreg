@@ -36,7 +36,8 @@ And `<arguments>` are below. The first four are required:
 
 ## Outputs
 
-All output images have been resampled to the voxel size and geometry of the MR.
+All output images have been resampled to the field of view, voxel size,
+and geometry of the MR.
 
     CT_REG                   CT registered to MR
     CT_REG_MAT               Transform from CT to MR (FSL format)
