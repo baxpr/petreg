@@ -8,7 +8,7 @@ https://github.com/MASILab/SLANTbrainSeg).
 2. Mean PET registered to CT (`flirt`, 6 dof)
 3. CT registered to MR (`flirt`, default 6 dof)
 4. SUVR calculated from summed PET image, referenced to cerebellum
-4. PET regional values extracted
+4. PET regional values extracted with nilearn
 
 ## Inputs
 
@@ -65,5 +65,6 @@ and geometry of the MR.
 * FSL: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
 * MCFLIRT: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/MCFLIRT
 * FLIRT: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT#References
+* nilearn: https://nilearn.github.io/authors.html#citing
 * MultiAtlas: https://pubmed.ncbi.nlm.nih.gov/23265798/
 * SLANT: https://pubmed.ncbi.nlm.nih.gov/30910724/
