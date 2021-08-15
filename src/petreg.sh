@@ -2,8 +2,6 @@
 #
 # Pipeline to coregister PET, CT, MR and extract regional PET values
 
-# FIXME use fslmodhd to set correct/sensible values for pixdim4 in SUVR image?
-
 # Initialize defaults (will be changed later if passed as options)
 export project=NO_PROJ
 export subject=NO_SUBJ
