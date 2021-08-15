@@ -5,8 +5,8 @@ from a MultiAtlas segmentation (https://github.com/VUIIS/Multi-Atlas-v3.0.0,
 https://github.com/MASILab/SLANTbrainSeg).
 
 1. Motion correction applied to PET time series (`mcflirt`, 6 dof)
-2. Mean PET registered to CT (`flirt`, 6 dof)
-3. CT registered to MR (`flirt`, default 6 dof)
+2. CT registered to mean PET (`flirt`, 6 dof)
+3. Mean PET registered to MR (`flirt`, default 6 dof)
 4. SUVR calculated from summed PET image, referenced to cerebellum
 4. PET regional values extracted with nilearn
 
@@ -23,7 +23,7 @@ And `<arguments>` are below. The first four are required:
     --mr_niigz        MR (typically T1W)
     --seg_niigz       Segmentation of MR from multi-atlas / slant
 	
-	--ctmr_dof        DOF for CT/MR registration (default 6)
+	--petmr_dof       DOF for PET/MR registration (default 6)
     
     --project         Information from XNAT, if used (optional). These
 	--subject           are only used to annotate the PDF QA report.
