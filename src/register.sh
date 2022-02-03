@@ -31,20 +31,30 @@ flirt -usesqform -dof 6 -in rpet_mean_reg -ref ct -omat rpet_to_ct.mat
 # Dilate/erode MR brain mask to avoid gaps
 fslmaths nseg-brain -dilM -dilM -dilM -dilM -dilM -ero -ero -ero nseg-brain-w -odt short
 
-# Register CT to MR
-echo "Register CT to MR"
+# Zero out high values in CT to avoid focus on bone contrast
+fslmaths ct -thr 0 -uthr 75 tct
+
+# Brain extract MR
+fslmaths mr -mul nseg-brain-w tmr
+
+# Register MR to CT
+echo "Register MR to CT"
 flirt -usesqform -dof ${ctmr_dof} -cost corratio \
-    -in ct -ref mr -refweight nseg-brain-w \
-    -out mct -omat ct_to_mr.mat
+    -in tmr -ref tct \
+    -out ctmr -omat mr_to_ct.mat
+
+# Invert MR to CT transform
+convert_xfm -omat ct_to_mr.mat -inverse mr_to_ct.mat
 
 # Combine CT-PET and PET-MR transforms
 echo "Combine transforms"
 convert_xfm -omat rpet_to_mr.mat -concat ct_to_mr.mat rpet_to_ct.mat
 
-# Apply registration to PET series (to MR space)
+# Apply registrations
 echo "Apply registration"
 flirt -in rpet -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet
 flirt -in rpet_mean_reg -ref mr -init rpet_to_mr.mat -applyxfm -out mrpet_mean_reg
+flirt -in ct -ref mr -init ct_to_mr.mat -out mct
 
 # Compute sum image
 echo "Computing sum"
