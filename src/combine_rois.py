@@ -38,6 +38,10 @@ for roi in rois:
 labels_roi = pandas.DataFrame(list(zip(Label, Region)),columns =['Label', 'Region'])
 labels_roi.to_csv(f'{a.out_pfx}.csv',index=False)
 
-roi_img = nibabel.nifti1.Nifti1Image(data_roi,img_seg.affine)
+roi_img = nibabel.nifti1.Nifti1Image(data_roi, affine=img_seg.affine, header=img_seg.header)
 roi_img.to_filename(f'{a.out_pfx}.nii.gz')
 
+# Also create a binary mask of brain
+data_brain = (data_roi > 0).astype(int)
+data_img = nibabel.nifti1.Nifti1Image(data_brain, affine=img_seg.affine, header=img_seg.header)
+data_img.to_filename(f'{a.out_pfx}-brain.nii.gz')
