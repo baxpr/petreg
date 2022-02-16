@@ -2,6 +2,7 @@ INPUTS*
 OUTPUTS*
 local*
 *.simg
+*.sif
 .DS_Store
 test_container.sh
 *.numbers
